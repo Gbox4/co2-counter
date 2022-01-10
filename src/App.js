@@ -1,25 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css"
+import Counter from "./Counter"
+import sample from "./sample.mp4"
+import YoutubeBackground from 'react-youtube-background'
+import Spacer from "./Spacer"
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const tonnes2020 = 1650000000000
+    const tpms = 1.10381785895
+
+    return (
+        <div className="App">
+            <YoutubeBackground
+            className="videoBackground"
+            videoId={"Bce9ON9Z2VM"} // * commenting this out to save data on my hotspot lol
+            >
+                <div className="mainBox">
+                    <Spacer vspace="30px"/>
+                    <div>
+                        <p>Human beings have emitted</p>
+                        <Counter tonnes2020={tonnes2020} tpms={tpms} />
+                        <p>tons of CO2 since 1800.</p>
+                    </div>
+                    <div className="footerBox">
+                        <p>This estimate is based off a report from <a href="https://ourworldindata.org/co2-and-other-greenhouse-gas-emissions">ourworldindata.org</a>.</p>
+                        <a href="https://github.com/Gbox4">Created by Gabe Banks 2022</a>
+                    </div>
+                </div>
+            </YoutubeBackground>
+
+        </div>
+    )
 }
 
-export default App;
+export default App
