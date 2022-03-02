@@ -10,6 +10,8 @@ export default function Counter(props) {
         const timer = setTimeout(() => {
             setCount(props.tonnes2020 + (+new Date() - 1577836800000) * props.tpms)
         }, 1) // changing to 10, there seems to be lag
+
+        return () => {clearTimeout(timer)}
     })
 
     return (

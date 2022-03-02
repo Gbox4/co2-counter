@@ -1,12 +1,22 @@
 import "./App.css"
 import Counter from "./Counter"
-import sample from "./sample.mp4"
 import YoutubeBackground from 'react-youtube-background'
 import Spacer from "./Spacer"
+import { useEffect, useState } from "react"
 
 function App() {
     const tonnes2020 = 1650000000000
     const tpms = 1.10381785895
+
+    const [alpha, setAlpha] = useState({backgroundColor: `rgba(0,0,0,1)`})
+
+    useEffect(() => {
+        const incrementer = setTimeout(() => {
+            console.log("alpha 0")
+            setAlpha({backgroundColor: `rgba(0,0,0,0.2)`})
+        }, 5000);
+        return () => {clearTimeout(incrementer)}
+    }, [])
 
     return (
         <div className="App">
@@ -14,7 +24,7 @@ function App() {
             className="videoBackground"
             videoId={"Bce9ON9Z2VM"} // * commenting this out to save data on my hotspot lol
             >
-                <div className="mainBox">
+                <div className="mainBox" style={alpha}>
                     <Spacer vspace="30px"/>
                     <div>
                         <p>Human beings have emitted</p>
