@@ -33,7 +33,7 @@ function App() {
                     </div>
                     <div className="footerBox">
                         <p>This estimate is based off a report from <a href="https://ourworldindata.org/co2-and-other-greenhouse-gas-emissions">ourworldindata.org</a>.</p>
-                        <a href="https://github.com/Gbox4">Created by Gabe Banks 2022</a>
+                        <a href="https://gabebanks.net">Created by Gabe Banks 2022</a>
                     </div>
                 </div>
             </YoutubeBackground>
